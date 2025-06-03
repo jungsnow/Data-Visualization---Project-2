@@ -3,7 +3,6 @@ from pathlib import Path
 from functools import reduce
 from operator import getitem
 from datetime import datetime
-from typing import Self
 from .utils import read_json, write_json
 
 
@@ -37,7 +36,7 @@ class ConfigParser:
         self._debug = self.config["debug"]
 
     @classmethod
-    def from_args(cls, args, options="") -> Self:
+    def from_args(cls, args, options="") -> "ConfigParser":
         """
         Initialize this class from some cli arguments. Used in train, test.
         """

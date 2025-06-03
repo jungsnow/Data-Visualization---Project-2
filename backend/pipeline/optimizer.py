@@ -15,7 +15,17 @@ from utils.configuration import settings
 
 
 def load_data_optimizer(config):
-    prefix: str = f'{config["server"]}_{config["league"]}_{config["latest_release"]}_{config["patch"]}'
+    # Handle both 'server' and 'servers' keys for backward compatibility
+    try:
+        server = config["server"]
+    except KeyError:
+        try:
+            servers = config["servers"]
+            server = servers[0] if servers else "na1"
+        except KeyError:
+            server = "na1"  # Default server
+    
+    prefix: str = f'{server}_{config["league"]}_{config["latest_release"]}_{config["patch"]}'
     # Create Mongodb client using env uri
     client = MongoClient(settings.db_uri, connect=False)
     db = client[settings.db_name]

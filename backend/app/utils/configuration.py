@@ -1,5 +1,5 @@
 from typing import Dict
-from pydantic import BaseSettings
+from pydantic_settings import BaseSettings
 from dotenv import dotenv_values
 
 env: Dict[str, str | None] = dotenv_values(".env")

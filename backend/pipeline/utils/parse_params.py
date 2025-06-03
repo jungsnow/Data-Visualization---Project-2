@@ -1,4 +1,7 @@
-from sklearn.utils.fixes import loguniform
+try:
+    from sklearn.utils.fixes import loguniform
+except ImportError:
+    from scipy.stats import loguniform
 from scipy.stats import randint
 from sklearn.experimental import enable_halving_search_cv  # noqa
 import sklearn.model_selection as model_selection_

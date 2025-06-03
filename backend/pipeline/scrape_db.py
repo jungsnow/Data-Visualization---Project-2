@@ -24,7 +24,7 @@ API_KEY: str = settings.api_key
 # SERVER = 'na1'  # ['euw1', 'na1', 'kr', 'oc1']
 # LEAGUE = 'challengers'  # ['challengers', 'grandmasters']
 
-MAX_COUNT: int = 30
+MAX_COUNT: int = 30 
 
 
 def requestsLog(url, status, headers):
@@ -39,7 +39,7 @@ async def start_tft_fetch(load_new: bool, server: str, league: str, max_count: i
     LEAGUE: str = league
     MAX_COUNT: int = max_count
 
-    client = MongoClient(settings.db_uri)
+    client = MongoClient(settings.db_uri, tls=True, tlsAllowInvalidCertificates=True, connectTimeoutMS=30000, serverSelectionTimeoutMS=30000)
     db = client[settings.db_name]
 
     # create Patheon object to 1 server API key
@@ -143,16 +143,15 @@ async def start_tft_fetch(load_new: bool, server: str, league: str, max_count: i
                                 target 	int 	
                                 wins 	int 
         """
-        match league:
-            case 'challengers':
-                getTFTLeagueFunc = getTFTChallengerLeague
-            case 'grandmasters':
-                getTFTLeagueFunc = getTFTGrandmasterLeague
-            case 'masters':
-                getTFTLeagueFunc = getTFTMasterLeague
-            case _:
-                # 0 is the default case if x is not found
-                getTFTLeagueFunc = getTFTChallengerLeague
+        if league == 'challengers':
+            getTFTLeagueFunc = getTFTChallengerLeague
+        elif league == 'grandmasters':
+            getTFTLeagueFunc = getTFTGrandmasterLeague
+        elif league == 'masters':
+            getTFTLeagueFunc = getTFTMasterLeague
+        else:
+            # Default case if league is not found
+            getTFTLeagueFunc = getTFTChallengerLeague
 
         summoners = await getTFTLeagueFunc()
 
@@ -161,9 +160,15 @@ async def start_tft_fetch(load_new: bool, server: str, league: str, max_count: i
             summoner_detail = await getTFT_Summoner(summoner['summonerId'])
             if summoner_detail != None:
                 summoners_league.append(summoner_detail)
+            # Add delay to avoid rate limits
+            await asyncio.sleep(0.5)
 
         summoners_league_df = pd.json_normalize(summoners_league)
         summoners_df = pd.json_normalize(summoners['entries'])
+
+        # Handle potential column conflicts during merge
+        if 'puuid' in summoners_df.columns:
+            summoners_df = summoners_df.drop('puuid', axis=1)
 
         return summoners_league_df.merge(
             summoners_df, left_on='id', right_on='summonerId')
@@ -198,7 +203,8 @@ async def start_tft_fetch(load_new: bool, server: str, league: str, max_count: i
 
     # For each summoners, get MAX_COUNT recent matches. Extend if any new.
     new_counter = 0
-    for _, summoner in summoners_df.iterrows():
+    for idx, (_, summoner) in enumerate(summoners_df.iterrows()):
+        logging.info(f'Processing summoner {idx + 1}/{len(summoners_df)}: {summoner.get("name", "Unknown")}')
         matches_detail, uniq_matches_id = await getTFTRecentMatches(summoner['puuid'], uniq_matches_id=uniq_matches_id)
         if matches_detail:
             new_counter += len(matches_detail)
@@ -209,6 +215,9 @@ async def start_tft_fetch(load_new: bool, server: str, league: str, max_count: i
 
             insert_collection_db(
                 matches_detail, collection=db[SERVER + '_' + 'matches_detail'])
+        
+        # Add delay between summoners to avoid rate limits
+        await asyncio.sleep(1.0)
 
     client.close()
 

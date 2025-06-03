@@ -1,4 +1,6 @@
-from pydantic import BaseSettings
+# pip install pydantic-settings
+from pydantic_settings import BaseSettings
+
 from dotenv import dotenv_values
 env = dotenv_values(".env")
 

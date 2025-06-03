@@ -15,6 +15,7 @@ notebook
 pandas
 Pillow
 pydantic
+pydantic-settings
 python-dotenv
 pymongo[srv]
 motor

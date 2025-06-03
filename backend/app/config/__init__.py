@@ -1,5 +1,6 @@
 from typing import Dict
-from pydantic import BaseSettings, BaseModel
+from pydantic import BaseModel
+from pydantic_settings import BaseSettings
 from dotenv import dotenv_values
 from datetime import date
 from functools import lru_cache
@@ -31,7 +32,7 @@ class LogConfig(BaseModel):
             "stream": "ext://sys.stderr",
         },
     }
-    loggers = {
+    loggers: dict[str, dict[str, str | list[str]]] = {
         LOGGER_NAME: {"handlers": ["default"], "level": LOG_LEVEL},
     }
 

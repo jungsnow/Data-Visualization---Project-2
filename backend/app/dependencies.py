@@ -14,5 +14,5 @@ args.add_argument(
 )
 config = ConfigParser.from_args(args)
 
-mongodb_client = AsyncIOMotorClient(settings.db_uri)
+mongodb_client = AsyncIOMotorClient(settings.db_uri, tlsAllowInvalidCertificates=True)
 database = mongodb_client[settings.db_name]
