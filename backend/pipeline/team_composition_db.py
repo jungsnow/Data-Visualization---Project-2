@@ -43,12 +43,12 @@ ASSETS_DIR: str = settings.assets_dir
 TARGETNAME = settings.targetname  # 'placement'
 
 # # Load TFT asset https://raw.communitydragon.org/latest/cdragon/tft/en_us.json
-tft_assets = read_json(os.path.join(ASSETS_DIR, f"en_us.json"))
-# Load TFT set 8
-tft8_set = tft_assets["sets"]["8"]["champions"]
+tft_assets = read_json(os.path.join(ASSETS_DIR, f"en_us_1.json"))
+# Load TFT set 14
+TFT14_set = tft_assets["sets"]["14"]["champions"]
 # Statics
 CHAMPIONS_DICT = {}
-for champion in tft8_set:
+for champion in TFT14_set:
     # CHAMPIONS_DICT.get(champion["apiName"], [])
     if champion["apiName"] not in CHAMPIONS_DICT:
         CHAMPIONS_DICT[champion["apiName"]] = []
@@ -150,7 +150,7 @@ def get_unit_comp_ranking(df: DataFrame, units_col, add_trait=True):
         df["comp"] = df["comp"].apply(add_traits)
 
     # remove prefix .split('_',1).str[-1]
-    df["comp"] = df["comp"].str.replace("TFT8_", "")
+    df["comp"] = df["comp"].str.replace("TFT14_", "")
     df = df.filter(["placement", "comp"])
     m = df.melt(["placement"], value_name=f"comp_grp")
     # group and aggregate mean/median average_placement
@@ -201,7 +201,7 @@ def get_unit_composition_ranking(df: DataFrame, units_col, add_trait=True):
     if add_trait:
         df["comp"] = df["comp"].apply(add_traits)
 
-    df["comp"] = df["comp"].str.replace("TFT8_", "")
+    df["comp"] = df["comp"].str.replace("TFT14_", "")
     df = df.filter(["placement", "group", "comp"])
     return df.sort_values(by="group")
 
@@ -273,11 +273,10 @@ def cluster_composition_ranking(model, input_df, units_col):
 
     df = get_unit_composition_ranking(df, units_col, add_trait=False)
 
-    df["grp_count"] = df.groupby(["group"], as_index=False)["group"].transform("count")
-    df["grp_placement"] = (
-        df.groupby(["group"], as_index=False)["placement"].transform("mean").round(2)["placement"]
-    )
-    df["mode"] = df.groupby("group")["comp"].transform(lambda x: pd.Series.mode(x)[0])
+    df["grp_count"]     = df.groupby("group")["group"].transform("count")
+    df["grp_placement"] = df.groupby("group")["placement"].transform("mean").round(2)
+    df["mode"]          = df.groupby("group")["comp"] \
+                             .transform(lambda s: pd.Series.mode(s)[0])
     return df
 
 
@@ -327,9 +326,9 @@ async def start_tft_data_analysis(
     ).columns.tolist()
 
     # traits level columns
-    traits_col: list = [s for s in numeric_cols if "Set8" in s]
+    traits_col: list = [s for s in numeric_cols if "TFT14" in s]
     # units level columns
-    units_col: list = [s for s in numeric_cols if "TFT8" in s]
+    units_col: list = [s for s in numeric_cols if "TFT14" in s]
     # augments columns
     augments_col: list[str] = ["augment0", "augment1", "augment2"]
     # units items columns

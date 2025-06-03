@@ -21,7 +21,7 @@ class Column_Wrapper(BaseEstimator, TransformerMixin):
         categorical_cols = X.select_dtypes(
             include=['object', 'category']).columns.tolist()
         one_hot_encoder = OneHotEncoder(
-            handle_unknown="ignore", sparse=False)
+            handle_unknown="ignore", sparse_output=False)
 
         preproc = StandardScaler()
 

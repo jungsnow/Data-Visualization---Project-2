@@ -1,4 +1,4 @@
-# from argparse import ArgumentParser
+from argparse import ArgumentParser
 from logging import Logger
 import uuid
 import os
@@ -17,7 +17,7 @@ from utils.logger import logging
 
 from config import LogConfig, get_settings
 
-# from utils.parse_config import ConfigParser
+from utils.parse_config import ConfigParser
 
 from dependencies import config, mongodb_client, database
 
@@ -125,7 +125,7 @@ class Predictor:
 
         # load the model from disk
         if self.config["model_dir"]:
-            load_path = os.path.join(self.config["model_dir"], "model.pkl")
+            load_path = os.path.join(self.config["model_dir"], f"{platform.value}_{league.value}_{version}_{patch}_model.pkl")
         else:
             load_path = os.path.join(self.save_dir, "model.pkl")
 

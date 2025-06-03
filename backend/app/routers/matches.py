@@ -63,7 +63,7 @@ async def list_matches(
         f"{platform}_{league}_{version}_matches"
     ].count_documents({})
     print(f"count: {count}")
-    query = request.app.database[f"{platform}_{league}_{version}_matches"].find(
+    query = request.app.database[f"{platform.value}_{league.value}_{version}_matches"].find(
         {}, skip=skip, limit=limit
     )
     results: list = [raw_post async for raw_post in query]

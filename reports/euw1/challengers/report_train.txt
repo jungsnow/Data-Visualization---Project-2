@@ -1,0 +1,33 @@
+###   Optimizing for neg_mean_absolute_error   ###
+
+-3.142  +/-1.842  for  {'XGB__use_label_encoder': False, 'XGB__objective': 'reg:squarederror', 'XGB__n_estimators': 300, 'XGB__max_depth': 12, 'XGB__learning_rate': 0.300000012, 'XGB__gamma': 0.1, 'XGB__eval_metric': 'mae', 'XGB__alpha': 0}
+
+###   Best model:   ###
+
+ Pipeline(steps=[('column_transformer', Column_Wrapper()),
+                ['XGB',
+                 XGBRegressor(alpha=0, base_score=None, booster=None,
+                              callbacks=None, colsample_bylevel=None,
+                              colsample_bynode=None, colsample_bytree=None,
+                              device=None, early_stopping_rounds=None,
+                              enable_categorical=False, eval_metric='mae',
+                              feature_types=None, feature_weights=None,
+                              gamma=0.1, grow_policy=None, importance_type=None,
+                              interaction_constraints=None,
+                              learning_rate=0.300000012, max_bin=None,
+                              max_cat_threshold=None, max_cat_to_onehot=None,
+                              max_delta_step=None, max_depth=12,
+                              max_leaves=None, min_child_weight=None,
+                              missing=nan, monotone_constraints=None,
+                              multi_strategy=None, n_estimators=300,
+                              n_jobs=None, ...)]])
+get_feature_names_out:
+
+ ['TFT14_Alistar_item0_AdaptiveHelm' 'TFT14_Alistar_item0_AegisOfTheLegion'
+ 'TFT14_Alistar_item0_BallistekEmblemItem' ... 'items_count' 'traits_sum'
+ 'units_sum']
+feature_importances_:
+
+ [0.0002314  0.         0.         ... 0.00698873 0.         0.        ]
+Number of samples used for training: 5388
+fit_time used for training: 0.1

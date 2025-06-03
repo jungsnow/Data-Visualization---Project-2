@@ -1,0 +1,20 @@
+
+
+Number of samples used for testing: 1984
+True Values:
+ 2524    2
+8250    5
+2656    1
+3943    7
+4534    5
+       ..
+2488    3
+8202    6
+2680    4
+1608    7
+7765    7
+Name: placement, Length: 1984, dtype: int64
+Pred Values:
+ [1.521685  5.2939754 6.0590296 ... 2.7010567 4.3002553 7.326689 ]
+MAE: 1.2533769540999444 
+Rounded MAE: 1.2293346774193548

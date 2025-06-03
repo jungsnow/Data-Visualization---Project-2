@@ -1,0 +1,127 @@
+unit,items,value_count,average_placement
+TFT14_Alistar,"None, None, None",2077,4.5
+TFT14_AnimaSquad,,2144,4.5
+TFT14_Annie,"BlueBuff, Leviathan, SpearOfShojin",46,3.91
+TFT14_Annie,"None, None, None",1841,4.5
+TFT14_Aphelios,"GuinsoosRageblade, GuinsoosRageblade, InfinityEdge",14,3.14
+TFT14_Aphelios,"GuinsoosRageblade, GuinsoosRageblade, HextechGunblade",48,4.23
+TFT14_Aphelios,"None, None, None",1843,4.5
+TFT14_Armorclad,,2144,4.5
+TFT14_Aurora,"ArchangelsStaff, None, None",13,2.54
+TFT14_Aurora,"None, None, RapidFireCannon",23,3.48
+TFT14_Aurora,"Morellonomicon, None, None",17,4.76
+TFT14_Aurora,"None, None, None",1677,4.77
+TFT14_BallisTek,,2144,4.5
+TFT14_Brand,"JeweledGauntlet, PowerGauntlet, SpearOfShojin",44,4.25
+TFT14_Brand,"None, None, None",1963,4.5
+TFT14_Brand,"AdaptiveHelm, JeweledGauntlet, PowerGauntlet",13,4.85
+TFT14_Braum,"None, None, None",1974,4.5
+TFT14_Bruiser,,2144,4.5
+TFT14_Chogath,"None, None, None",1967,4.5
+TFT14_Controller,,2144,4.5
+TFT14_Cutter,,2144,4.5
+TFT14_Cyberboss,,2144,4.5
+TFT14_Darius,"None, None, None",2058,4.49
+TFT14_Divinicorp,,2144,4.5
+TFT14_DrMundo,"None, None, None",2070,4.51
+TFT14_Draven,"None, None, None",1989,4.49
+TFT14_EdgeRunner,,2144,4.5
+TFT14_Ekko,"None, None, None",2051,4.5
+TFT14_Elise,"BlueBuff, JeweledGauntlet, PowerGauntlet",17,4.24
+TFT14_Elise,"None, None, None",1876,4.53
+TFT14_Elise,"BlueBuff, HextechGunblade, JeweledGauntlet",17,5.12
+TFT14_Fiddlesticks,"None, None, None",2079,4.51
+TFT14_Galio,"None, None, None",2005,4.5
+TFT14_Garen,"None, None, None",1963,4.6
+TFT14_Gragas,"None, None, None",1986,4.5
+TFT14_Graves,"None, None, None",2138,4.5
+TFT14_HotRod,,2144,4.5
+TFT14_Illaoi,"None, None, None",2069,4.52
+TFT14_Immortal,,2144,4.5
+TFT14_Jarvan,"None, None, None",1894,4.51
+TFT14_Jarvan,"None, None, RedBuff",17,4.65
+TFT14_Jarvan,"None, None, SpectralGauntlet",13,4.85
+TFT14_Jax,"None, None, None",1938,4.56
+TFT14_Jhin,"None, None, None",1928,4.52
+TFT14_Jinx,"None, None, None",2059,4.49
+TFT14_Kindred,"None, None, None",2093,4.49
+TFT14_Kobuko,"None, None, None",1888,4.65
+TFT14_KogMaw,"None, None, None",2099,4.51
+TFT14_LeBlanc,"None, None, None",2121,4.5
+TFT14_Leona,"None, None, None",1762,4.54
+TFT14_Marksman,,2144,4.5
+TFT14_MissFortune,"InfinityEdge, MadredsBloodrazor, SpearOfShojin",14,4.43
+TFT14_MissFortune,"None, None, None",1831,4.54
+TFT14_MissFortune,"InfinityEdge, PowerGauntlet, SpearOfShojin",12,4.75
+TFT14_Mob,,2144,4.5
+TFT14_Mordekaiser,"Crownguard, MordekaiserCyberneticItem, WarmogsArmor",13,3.85
+TFT14_Mordekaiser,"None, None, None",1786,4.51
+TFT14_Morgana,"BlightingJewel, BlueBuff, HextechGunblade",13,1.92
+TFT14_Morgana,"ArmorcladEmblemItem, BlueBuff, HextechGunblade",39,3.54
+TFT14_Morgana,"BlueBuff, HextechGunblade, RabadonsDeathcap",12,4.0
+TFT14_Morgana,"ArchangelsStaff, BlueBuff, HextechGunblade",16,4.12
+TFT14_Morgana,"BlueBuff, HextechGunblade, Morellonomicon",23,4.48
+TFT14_Naafiri,"None, None, None",2062,4.5
+TFT14_Neeko,"None, None, RedBuff",14,3.71
+TFT14_Neeko,"None, None, None",1817,4.49
+TFT14_Netgod,,2144,4.5
+TFT14_NidaleeCougar,"None, None, None",2059,4.5
+TFT14_Overlord,,2144,4.5
+TFT14_Poppy,"None, None, None",1949,4.56
+TFT14_Renekton,"HextechGunblade, Quicksilver, SwiftEmblemItem",34,3.79
+TFT14_Renekton,"None, None, None",1822,4.68
+TFT14_Rengar,"None, None, None",2116,4.48
+TFT14_Rhaast,"None, None, None",2051,4.49
+TFT14_Samira,"None, None, None",1883,4.6
+TFT14_Sejuani,"FrozenHeart, None, None",21,3.9
+TFT14_Sejuani,"None, None, None",1604,4.58
+TFT14_Sejuani,"None, None, SejuaniCyberneticItem",12,4.92
+TFT14_Senna,"None, None, None",2065,4.49
+TFT14_Seraphine,"None, None, None",2075,4.49
+TFT14_Shaco,"None, None, None",2096,4.5
+TFT14_Shyvana,"None, None, None",1997,4.49
+TFT14_Skarner,"None, None, None",2121,4.49
+TFT14_StreetDemon,,2144,4.5
+TFT14_Strong,,2144,4.5
+TFT14_Suits,,2144,4.5
+TFT14_SummonLevel2,None,2119,4.48
+TFT14_SummonLevel2,ChromeCounter,25,6.32
+TFT14_SummonLevel4,ChromeCounter,80,4.49
+TFT14_SummonLevel4,None,2064,4.5
+TFT14_Summon_Turret,None,2136,4.5
+TFT14_Supercharge,,2144,4.5
+TFT14_Swift,,2144,4.5
+TFT14_Sylas,"None, None, None",2072,4.5
+TFT14_Techie,,2144,4.5
+TFT14_Thirsty,,2144,4.5
+TFT14_TwistedFate,"None, None, None",2038,4.49
+TFT14_TwistedFate,"ArchangelsStaff, GuinsoosRageblade, HextechGunblade",25,4.52
+TFT14_Urgot,"None, None, None",1930,4.55
+TFT14_Vanguard,,2144,4.5
+TFT14_Varus,"Morellonomicon, NaafiriCyberneticItem, StatikkShiv",20,3.65
+TFT14_Varus,"NaafiriCyberneticItem, RapidFireCannon, StatikkShiv",21,4.05
+TFT14_Varus,"None, None, None",1962,4.51
+TFT14_Vayne,"None, None, None",2104,4.51
+TFT14_Veigar,"None, None, None",2093,4.51
+TFT14_Vex,"BlueBuff, HextechGunblade, PowerGauntlet",108,4.13
+TFT14_Vex,"None, None, None",1845,4.51
+TFT14_Vi,"None, None, None",2125,4.5
+TFT14_Viego,"GuardianAngel, None, None",12,3.5
+TFT14_Viego,"None, None, None",1960,4.57
+TFT14_ViegoUniqueTrait,,2144,4.5
+TFT14_Virus,,2144,4.5
+TFT14_Xayah,"InfinityEdge, LastWhisper, SpearOfShojin",17,3.76
+TFT14_Xayah,"InfinityEdge, PowerGauntlet, SpearOfShojin",31,3.77
+TFT14_Xayah,"None, None, None",1785,4.52
+TFT14_Xayah,"InfinityEdge, MadredsBloodrazor, PowerGauntlet",15,4.8
+TFT14_Yuumi,"None, None, None",1883,4.5
+TFT14_Yuumi,"BlueBuff, HextechGunblade, JeweledGauntlet",24,4.54
+TFT14_Zac,"BrambleVest, DragonsClaw, WarmogsArmor",12,2.92
+TFT14_Zac,"None, None, None",1753,4.71
+TFT14_Zed,"None, None, None",2016,4.48
+TFT14_Zed,"GuardianAngel, InfinityEdge, UnstableConcoction",17,4.53
+TFT14_Zeri,"GuinsoosRageblade, HextechGunblade, ZeriCyberneticItem",14,4.0
+TFT14_Zeri,"None, None, None",1924,4.48
+TFT14_Zeri,"GuinsoosRageblade, GuinsoosRageblade, ZeriCyberneticItem",16,5.25
+TFT14_Ziggs,"None, None, None",2021,4.51
+TFT14_Zyra,"None, None, None",2062,4.51

@@ -14,7 +14,7 @@ y_dummy = np.random.random(100)  # 100 target values
 model.fit(X_dummy, y_dummy)
 
 # Ensure directory exists
-save_path = '/Users/HC/MinhDung/exp/tftchamp/backend/app/saved/challengers/model.pkl'
+save_path = "saved/challengers/model.pkl"
 os.makedirs(os.path.dirname(save_path), exist_ok=True)
 
 # Save the model

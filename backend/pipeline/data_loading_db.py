@@ -71,7 +71,7 @@ async def process_matches(df) -> list[dict]:
             # match['players_eliminated'] = participant['players_eliminated']
             # match['total_damage_to_players'] = participant['total_damage_to_players']
 
-            for augment_index, augment in enumerate(participant['augments']):
+            for augment_index, augment in enumerate(participant.get('augments', [])):
                 match[f'augment{augment_index}'] = augment
 
             for _, trait in enumerate(participant['traits']):
