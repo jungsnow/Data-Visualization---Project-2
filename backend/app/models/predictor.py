@@ -124,17 +124,17 @@ class Predictor:
             return
 
         # load the model from disk
-        if self.config["model_dir"]:
-            load_path = os.path.join(self.config["model_dir"], f"{platform.value}_{league.value}_{version}_{patch}_model.pkl")
-        else:
-            load_path = os.path.join(self.save_dir, "model.pkl")
+        # if self.config["model_dir"]:
+        #     load_path = os.path.join(self.config["model_dir"], f"{platform}_{league}_{version}_{patch}_model.pkl")
+        # else:
+        #     load_path = os.path.join(self.save_dir, "model.pkl")
 
-        self.logger.info(f"Loading model from: {load_path}")
+        # self.logger.info(f"Loading model from: {load_path}")
 
-        with open(load_path, "rb") as input_file:
-            loaded_model = pickle.load(input_file)
-            self.logger.info(loaded_model)
-        self.model = loaded_model
+        # with open(load_path, "rb") as input_file:
+        #     loaded_model = pickle.load(input_file)
+        #     self.logger.info(loaded_model)
+        # self.model = loaded_model
 
     async def get_feature_importance(
         self, platform=None, league=None, version=None, patch=None

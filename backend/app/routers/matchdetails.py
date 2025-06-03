@@ -19,17 +19,30 @@ router = APIRouter()
 
 
 class Platform(str, Enum):
-    euw1 = ("euw1",)
-    br1 = ("br1",)
-    eun1 = ("eun1",)
-    jp1 = ("jp1",)
-    kr = ("kr",)
-    la1 = ("la1",)
-    la2 = ("la2",)
-    na1 = ("na1",)
-    oc1 = ("oc1",)
-    tr1 = ("tr1",)
-    ru = "ru"
+    euw1 = "euw1"
+    br1  = "br1"
+    eun1 = "eun1"
+    jp1  = "jp1"
+    kr   = "kr"
+    la1  = "la1"
+    la2  = "la2"
+    na1  = "na1"
+    oc1  = "oc1"
+    tr1  = "tr1"
+    ru   = "ru"
+
+    def __str__(self) -> str:          # runs when f-string needs a str
+        return self.value
+
+
+class League(str, Enum):
+    challengers   = "challengers"
+    grandmasters  = "grandmasters"
+    masters       = "masters"
+    diamonds      = "diamonds"
+
+    def __str__(self) -> str:          # runs when f-string needs a str
+        return self.value
 
 
 async def pagination(

@@ -15,12 +15,12 @@ ui <- dashboardPage(
     sidebarMenu(
       id = "sidebar",
       menuItem("Feature Importances", tabName = "featureImportance", icon = icon("chart-bar")),
-      menuItem("Augments", tabName = "augment", icon = icon("align-left")),
+      # menuItem("Augments", tabName = "augment", icon = icon("align-left")),
       menuItem("Items", tabName = "item", icon = icon("box")),
       menuItem("Compositions", tabName = "comp", icon = icon("timeline")),
       menuItem("All Matches", tabName = "allMatch", icon = icon("table")),
-      menuItem("Recent Matches", tabName = "recentMatch", icon = icon("list")),
-      menuItem("Predict", tabName = "predict", icon = icon("brain"))
+      menuItem("Recent Matches", tabName = "recentMatch", icon = icon("list"))
+      # menuItem("Predict", tabName = "predict", icon = icon("brain"))
     ),
     
     # Region/League selectors
@@ -47,13 +47,13 @@ ui <- dashboardPage(
       ),
       
       # 2) Augments section
-      tabItem(tabName = "augment",
-        fluidRow(
-          box(width = 12, title = "Augments",
-              uiOutput("augmentCards")
-          )
-        )
-      ),
+      # tabItem(tabName = "augment",
+      #   fluidRow(
+      #     box(width = 12, title = "Augments",
+      #         uiOutput("augmentCards")
+      #     )
+      #   )
+      # ),
       
       # 3) Items section
       tabItem(tabName = "item",
@@ -89,17 +89,17 @@ ui <- dashboardPage(
               DT::dataTableOutput("recentMatchTable")
           )
         )
-      ),
+      )
       
       # 7) Predict tab (placeholder)
-      tabItem(tabName = "predict",
-        fluidRow(
-          box(width = 12, title = "Predict",
-              h3("Work in Progress"),
-              textOutput("versionInfo")
-          )
-        )
-      )
+      # tabItem(tabName = "predict",
+      #   fluidRow(
+      #     box(width = 12, title = "Predict",
+      #         h3("Work in Progress"),
+      #         textOutput("versionInfo")
+      #     )
+      #   )
+      # )
     )
   )
 )
@@ -217,14 +217,10 @@ server <- function(input, output, session) {
                     ),
                     div(class = "card-footer",
                         actionButton(
-                          inputId = paste0("share_", gsub("[^A-Za-z0-9]", "_", image$uri)),
-                          label = "Share",
-                          class = "btn btn-sm btn-primary"
-                        ),
-                        actionButton(
                           inputId = paste0("learn_", gsub("[^A-Za-z0-9]", "_", image$uri)),
                           label = "Learn More",
-                          class = "btn btn-sm btn-secondary"
+                          class = "btn btn-sm btn-secondary",
+                          onclick = paste0("window.open('", img_src, "', '_blank')")
                         )
                     )
                 )
