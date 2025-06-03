@@ -1,8 +1,8 @@
 {
-    "name": "na1_grandmasters",
+    "name": "kr_grandmasters",
     "load_new": true,
     "servers": [
-        "na1"
+        "kr"
     ],
     "league": "grandmasters",
     "max_count": 30,

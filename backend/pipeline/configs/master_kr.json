@@ -1,11 +1,11 @@
 {
-    "name": "na1_grandmasters",
+    "name": "kr_masters",
     "load_new": true,
     "servers": [
-        "na1"
+        "kr"
     ],
-    "league": "grandmasters",
-    "max_count": 30,
+    "league": "masters",
+    "max_count": 3,
     "ranked_id": 1100,
     "latest_release": "15.10.680.4378",
     "patch": "2025-05-28",
